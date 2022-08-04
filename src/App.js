@@ -13,7 +13,16 @@ function App() {
         <div>Total: {total}</div>
 
         {digits.map((digit) => {
-          return <button>{digit}</button>;
+          return (
+            <button
+              key={digit}
+              onClick={() => {
+                setTotal(total + digit);
+              }}
+            >
+              {digit}
+            </button>
+          );
         })}
 
         {/* <button onClick={() => {setTotal(total + 1)}}>1</button>
